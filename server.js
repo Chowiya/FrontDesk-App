@@ -1,11 +1,22 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+const { MONGO_DB, PORT } = require('./utils/config');
 
 app.get('/', (req, res) => {
     res.send('Hello World');
  
 })
 
-app.listen(3001, () => {
-    console.log('Server is running on port @http://127.0.0.1:3001');
+
+
+mongoose.connect(MONGO_DB)
+.then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => {
+        console.log('Server is running on port @http://127.0.0.1:3001');
+    })
+})
+.catch((error) => {
+    console.log('Error connecting to MongoDB', error);
 })
