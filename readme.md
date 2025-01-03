@@ -21,3 +21,5 @@ This is the backend for the front desk application.It is restfull api hat allows
 - [x] install dotenv
 - [x] file split
 - [x] router setup
+- [x] controllers setup
+- [ ] models setup
