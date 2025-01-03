@@ -1,12 +1,8 @@
-const express = require('express');
-const app = express();
+const app = require('./app');
 const mongoose = require('mongoose');
 const { MONGO_DB, PORT } = require('./utils/config');
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
- 
-})
+
 
 
 
